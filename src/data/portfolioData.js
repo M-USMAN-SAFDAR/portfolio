@@ -37,7 +37,7 @@ export const portfolioData = {
     role: 'Full Stack Developer',
     availability: 'Open for new opportunities',
     location: 'Remote / Global',
-    email: 'usmansafdar2025@gmail.com',
+    email: 'usmansafdar12535@gmail.com',
     cvUrl: '/Muhammad_Usman_CV.pdf',
     socials: {
       github: 'https://github.com/usmansHUB',
