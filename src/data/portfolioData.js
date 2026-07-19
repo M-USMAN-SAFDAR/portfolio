@@ -57,7 +57,7 @@ export const portfolioData = {
         'A full-stack HR management platform designed to simplify employee management and organizational workflows, featuring interactive dashboards and structured database handling.',
       modules: ['mongodb', 'express', 'react', 'nodejs'],
       image: '/projects/hrm.png',
-      link: 'https://hr-managementapp.vercel.app/',
+      link: 'https://hr-managementt.vercel.app/',
       featured: true,
     },
     {
@@ -67,7 +67,7 @@ export const portfolioData = {
         'A salon booking and management solution using React JS, Tailwind CSS, Express JS, and MongoDB, featuring appointment booking and a secure admin dashboard.',
       modules: ['mongodb', 'express', 'react', 'nodejs'],
       image: '/projects/salon.png',
-      link: 'https://hairsaloon-lovat.vercel.app/',
+      link: 'https://luxehairsaloon.vercel.app/',
       featured: true,
     },
   ],
