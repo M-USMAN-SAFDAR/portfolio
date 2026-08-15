@@ -38,7 +38,7 @@ export const portfolioData = {
     availability: 'Open for new opportunities',
     location: 'Remote / Global',
     email: 'usmansafdar12535@gmail.com',
-    cvUrl: '/Muhammad_Usman_CV.pdf',
+    cvUrl: '/Muhammad_Usman_Safdar-CV.pdf',
     socials: {
       github: 'https://github.com/M-USMAN-SAFDAR',
       linkedin: 'https://www.linkedin.com/in/usmansafdar2025',
