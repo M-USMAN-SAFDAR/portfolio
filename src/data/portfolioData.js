@@ -40,7 +40,7 @@ export const portfolioData = {
     email: 'usmansafdar12535@gmail.com',
     cvUrl: '/Muhammad_Usman_CV.pdf',
     socials: {
-      github: 'https://github.com/usmansHUB',
+      github: 'https://github.com/M-USMAN-SAFDAR',
       linkedin: 'https://www.linkedin.com/in/usmansafdar2025',
       twitter: 'https://x.com/oiiUsman',
       instagram: 'https://www.instagram.com/oiiusmann',
