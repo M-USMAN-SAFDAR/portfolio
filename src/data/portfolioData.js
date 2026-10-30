@@ -28,11 +28,11 @@ export const TOOLING_SKILLS = [
   { name: 'Android Studio', category: 'Tools', color: '#3DDC84', slug: 'androidstudio' },
   { name: 'Postman', category: 'Tools', color: '#FF6C37', slug: 'postman' },
   { name: 'Figma', category: 'Tools', color: '#F24E1E', slug: 'figma' },
-  { name: 'cPanel', category: 'Tools', color: '#FF6C2C', slug: 'cpanel' },
+  { name: 'cPanel', category: 'Tools', color: '#FF6C2C', slug: 'cpanel', iconUrl: 'https://cdn.simpleicons.org/cpanel/FF6C2C' },
   { name: 'Vercel', category: 'Tools', color: '#EDEDED', slug: 'vercel' },
-  { name: 'n8n', category: 'Tools', color: '#EA4B71', slug: 'n8n' },
-  { name: 'Claude Code', category: 'Tools', color: '#D97757', slug: 'claude' },
-  { name: 'Antigravity IDE', category: 'Tools', color: '#8B5CF6', slug: 'antigravity' },
+  { name: 'n8n', category: 'Tools', color: '#EA4B71', slug: 'n8n', iconUrl: 'https://cdn.simpleicons.org/n8n/EA4B71' },
+  { name: 'Claude Code', category: 'Tools', color: '#D97757', slug: 'claude', iconUrl: 'https://cdn.simpleicons.org/anthropic/D97757' },
+  { name: 'Antigravity IDE', category: 'Tools', color: '#8B5CF6', slug: 'antigravity', iconUrl: 'https://antigravity.google/assets/image/antigravity-logo.png' },
 ]
 
 export const CMS_SKILLS = [
