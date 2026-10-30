@@ -11,7 +11,7 @@ Personal portfolio for **Muhammad Usman Safdar**, a full stack developer buildin
 - Downloadable CV and contact form
 - Compressed WebP imagery with lazy-loaded project previews
 - Three.js hero visuals loaded after user interaction
-- Netlify SPA fallback configured for client-side routes
+- Vercel and Netlify SPA fallbacks configured for client-side routes
 
 ## Built with
 
@@ -50,7 +50,7 @@ npm run build
 npm run preview
 ```
 
-The production site is generated in `dist/`. The included `netlify.toml` publishes that folder and routes app paths back to `index.html`.
+The production site is generated in `dist/`. The included Netlify and Vercel configuration files publish that folder and route app paths back to `index.html`.
 
 ## Project structure
 

@@ -2,7 +2,7 @@
 import { onMounted, onBeforeUnmount, ref, nextTick, computed, watch } from 'vue'
 import { portfolioData } from '../data/portfolioData'
 import { useThemeStore } from '../stores/themeStore'
-import { Layers, Cpu, Database } from 'lucide-vue-next'
+import { Layers, Cpu, Database, PanelsTopLeft } from 'lucide-vue-next'
 import FuzzyText from '../components/FuzzyText.vue'
 
 const themeStore = useThemeStore()
@@ -13,6 +13,7 @@ const viewRoot = ref(null)
 const categories = [
   { name: 'Frontend', icon: Layers },
   { name: 'Backend & Database', icon: Database },
+  { name: 'CMS & E-commerce', icon: PanelsTopLeft },
   { name: 'Tools', icon: Cpu }
 ]
 

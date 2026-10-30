@@ -6,6 +6,7 @@ export const FRONTEND_SKILLS = [
   { name: 'HTML5', category: 'Frontend', color: '#FFFFFF', slug: 'html' },
   { name: 'CSS3', category: 'Frontend', color: '#FFFFFF', slug: 'css' },
   { name: 'Vite', category: 'Frontend', color: '#FFFFFF', slug: 'vite' },
+  { name: 'Dart', category: 'Frontend', color: '#FFFFFF', slug: 'dart' },
 ]
 
 export const BACKEND_SKILLS = [
@@ -27,6 +28,18 @@ export const TOOLING_SKILLS = [
   { name: 'Android Studio', category: 'Tools', color: '#FFFFFF', slug: 'androidstudio' },
   { name: 'Postman', category: 'Tools', color: '#FFFFFF', slug: 'postman' },
   { name: 'Figma', category: 'Tools', color: '#FFFFFF', slug: 'figma' },
+  { name: 'cPanel', category: 'Tools', color: '#FFFFFF', slug: 'cpanel' },
+  { name: 'Vercel', category: 'Tools', color: '#FFFFFF', slug: 'vercel' },
+  { name: 'n8n', category: 'Tools', color: '#FFFFFF', slug: 'n8n' },
+  { name: 'Claude Code', category: 'Tools', color: '#FFFFFF', slug: 'claude' },
+  { name: 'Antigravity IDE', category: 'Tools', color: '#FFFFFF', slug: 'antigravity' },
+]
+
+export const CMS_SKILLS = [
+  { name: 'WordPress', category: 'CMS & E-commerce', color: '#FFFFFF', slug: 'wordpress' },
+  { name: 'Elementor', category: 'CMS & E-commerce', color: '#FFFFFF', slug: 'elementor' },
+  { name: 'WooCommerce', category: 'CMS & E-commerce', color: '#FFFFFF', slug: 'woocommerce' },
+  { name: 'Plugin Integration', category: 'CMS & E-commerce', color: '#FFFFFF', slug: 'wordpress' },
 ]
 
 export const portfolioData = {
@@ -48,7 +61,32 @@ export const portfolioData = {
     },
     formspreeEndpoint: 'https://formspree.io/f/xgoqzgza',
   },
-  education: [],
+  education: [
+    {
+      degree: 'BS Computer Science (Post-Associate)',
+      institution: 'University of Education, Lahore',
+      period: '2025 - 2027',
+      tags: ['Computer Science', 'Undergraduate'],
+    },
+    {
+      degree: 'Associate Degree in Computer Sciences',
+      institution: 'Riphah International University, Lahore',
+      period: '2023 - 2025',
+      tags: ['Computer Sciences'],
+    },
+    {
+      degree: 'Intermediate (ICS)',
+      institution: 'Government College Gulberg, Lahore',
+      period: '2020 - 2022',
+      tags: ['Intermediate', 'Computer Science'],
+    },
+    {
+      degree: 'Matriculation',
+      institution: 'City District Govt Boys High School, Lahore',
+      period: '2018 - 2020',
+      tags: ['Secondary Education'],
+    },
+  ],
   projects: [
     {
       id: 'hrm',
@@ -96,13 +134,29 @@ export const portfolioData = {
       featured: true,
     },
   ],
-  skills: [...FRONTEND_SKILLS, ...BACKEND_SKILLS, ...TOOLING_SKILLS],
+  skills: [...FRONTEND_SKILLS, ...BACKEND_SKILLS, ...CMS_SKILLS, ...TOOLING_SKILLS],
   skillCategories: [
     { title: 'Frontend', skills: FRONTEND_SKILLS },
     { title: 'Backend & Database', skills: BACKEND_SKILLS },
+    { title: 'CMS & E-commerce', skills: CMS_SKILLS },
     { title: 'Tools', skills: TOOLING_SKILLS },
   ],
-  experience: [],
+  experience: [
+    {
+      role: 'Freelance WordPress & Web Developer',
+      company: 'Self-Employed',
+      location: 'Lahore, Pakistan',
+      period: '2023 - Present',
+      status: true,
+      description: 'Developing responsive WordPress websites and WooCommerce stores, with a focus on tailored page design, dependable checkout flows, and ongoing site maintenance.',
+      tags: ['WordPress', 'Elementor', 'WooCommerce', 'SEO', 'cPanel'],
+      bullets: [
+        'Customized responsive WordPress themes and built tailored landing pages with Elementor and visual builders.',
+        'Configured WooCommerce stores, product catalogs, payment gateway integrations, and checkout flows.',
+        'Improved website performance, SEO structure, and security, and managed domain hosting through cPanel.',
+      ],
+    },
+  ],
   roles: [
     {
       id: 'fullstack',
