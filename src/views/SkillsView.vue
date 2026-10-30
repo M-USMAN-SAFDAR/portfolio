@@ -8,6 +8,8 @@ import FuzzyText from '../components/FuzzyText.vue'
 const themeStore = useThemeStore()
 const { skills } = portfolioData
 const viewRoot = ref(null)
+const iconFailures = ref({})
+const iconFallbackLabel = (name) => name.split(/\s+/).map((part) => part[0]).join('').slice(0, 2)
 
 // Setup categories
 const categories = [
@@ -262,11 +264,15 @@ onBeforeUnmount(() => {
                       webkitMask: `url(${skill.iconUrl}) no-repeat center / contain`
                     }"
                   ></div>
-                  <img v-else :src="skill.iconUrl || `https://skillicons.dev/icons?i=${skill.slug}`"
+                  <img v-else-if="!iconFailures[skill.name]" :src="skill.iconUrl || `https://skillicons.dev/icons?i=${skill.slug}`"
                     :alt="skill.name"
                     width="40"
                     height="40"
-                    class="w-full h-full object-contain grayscale" />
+                    class="w-full h-full object-contain"
+                    @error="iconFailures[skill.name] = true" />
+                  <span v-else class="w-full h-full flex items-center justify-center rounded font-black text-[10px]" :style="{ color: skill.color, backgroundColor: `${skill.color}22` }">
+                    {{ iconFallbackLabel(skill.name) }}
+                  </span>
                 </div>
 
               </div>
