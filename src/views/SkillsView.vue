@@ -24,13 +24,6 @@ const categoryDescriptions = {
   Tools: 'Using version control, API testing, design, hosting, and workflow tools.',
 }
 
-const categoryLabels = {
-  Frontend: 'FRONTEND',
-  'Backend & Database': 'BACKEND',
-  'CMS & E-commerce': 'CMS',
-  Tools: 'TOOLS',
-}
-
 const skillDescriptions = {
   JavaScript: 'Adds interactive behavior and application logic to web experiences.',
   React: 'Builds reusable UI components and data-driven web interfaces.',
@@ -254,7 +247,7 @@ onBeforeUnmount(() => {
             ></div>
 
             <div class="flex flex-col gap-3 mb-4 w-full min-w-0">
-              <div class="flex items-start justify-between gap-2 w-full min-w-0">
+              <div class="flex items-start gap-3 w-full min-w-0">
                 <!-- Icon Frame -->
                 <div class="w-10 h-10 flex items-center justify-center p-2 rounded shadow-inner bg-surface border border-primary/10 transition-transform duration-500 group-hover:scale-105 shrink-0"
                   :style="{ color: skill.color, borderRadius: 'calc(var(--app-radius) / 4)' }"
@@ -276,13 +269,6 @@ onBeforeUnmount(() => {
                     class="w-full h-full object-contain grayscale" />
                 </div>
 
-                <!-- Compact category label leaves room for the full skill name below. -->
-                <span 
-                  class="max-w-[58%] min-w-0 text-right text-[7px] sm:text-[8px] font-black uppercase tracking-[0.08em] leading-tight px-1.5 py-1 rounded bg-surface border border-primary/5 text-on-surface/60 whitespace-normal break-words"
-                  :class="themeStore.currentStyle === 'brutal' ? 'border-2 border-on-surface' : ''"
-                >
-                  {{ categoryLabels[skill.category] || skill.category }}
-                </span>
               </div>
 
               <h4 class="w-full min-w-0 font-headline font-black uppercase tracking-tight text-sm sm:text-base text-on-surface leading-tight whitespace-normal break-words [overflow-wrap:anywhere]">
