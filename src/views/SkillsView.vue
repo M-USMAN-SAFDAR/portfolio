@@ -17,6 +17,55 @@ const categories = [
   { name: 'Tools', icon: Cpu }
 ]
 
+const categoryDescriptions = {
+  Frontend: 'Building responsive web interfaces and cross-platform mobile experiences.',
+  'Backend & Database': 'Developing server-side logic, REST APIs, and reliable data storage.',
+  'CMS & E-commerce': 'Creating and managing WordPress sites, custom pages, and online stores.',
+  Tools: 'Using version control, API testing, design, hosting, and workflow tools.',
+}
+
+const categoryLabels = {
+  Frontend: 'FRONTEND',
+  'Backend & Database': 'BACKEND',
+  'CMS & E-commerce': 'CMS',
+  Tools: 'TOOLS',
+}
+
+const skillDescriptions = {
+  JavaScript: 'Adds interactive behavior and application logic to web experiences.',
+  React: 'Builds reusable UI components and data-driven web interfaces.',
+  Flutter: 'Creates cross-platform mobile applications from a shared codebase.',
+  'Tailwind CSS': 'Styles responsive interfaces with composable utility classes.',
+  HTML5: 'Provides semantic structure and accessible content for web pages.',
+  CSS3: 'Controls responsive layouts, visual styling, and interface details.',
+  Vite: 'Runs a fast development server and creates optimized production builds.',
+  Dart: 'Powers Flutter applications with a modern, strongly typed language.',
+  'Node.js': 'Runs JavaScript on the server for APIs and backend services.',
+  Express: 'Creates HTTP routes and REST API services with Node.js.',
+  MongoDB: 'Stores application data in flexible, document-based collections.',
+  PostgreSQL: 'Stores structured data with relational queries and transactions.',
+  FastAPI: 'Builds typed Python APIs with automatic request validation.',
+  Python: 'Supports backend development, scripting, and automation.',
+  Firebase: 'Provides managed app services such as authentication and cloud data.',
+  SQL: 'Queries and manages structured data in relational databases.',
+  'REST APIs': 'Connect web and mobile clients with backend services over HTTP.',
+  Mongoose: 'Defines MongoDB schemas and simplifies document operations in Node.js.',
+  WordPress: 'Builds and manages content-driven websites with a flexible CMS.',
+  Elementor: 'Designs custom WordPress pages and responsive landing pages.',
+  WooCommerce: 'Adds product catalogs, checkout, and store management to WordPress.',
+  'Plugin Integration': 'Connects WordPress sites to extensions and third-party services.',
+  Git: 'Tracks code changes and supports collaborative development workflows.',
+  GitHub: 'Hosts repositories and supports code review and project collaboration.',
+  'Android Studio': 'Provides development, debugging, and device tools for Android apps.',
+  Postman: 'Tests API requests, responses, and endpoint behavior.',
+  Figma: 'Creates and reviews interface layouts and visual design prototypes.',
+  cPanel: 'Manages website hosting, domains, files, and related server settings.',
+  Vercel: 'Deploys frontend applications and provides hosted preview builds.',
+  n8n: 'Connects services and automates repeatable workflows.',
+  'Claude Code': 'Assists coding workflows with an AI-powered development tool.',
+  'Antigravity IDE': 'Supports coding and project work in an integrated development environment.',
+}
+
 const activeCategory = ref('Frontend')
 const selectedSkill = ref(null)
 const scrambleSkillName = ref('')
@@ -75,7 +124,7 @@ const associatedProjects = computed(() => {
 const selectedMeta = computed(() => {
   if (!selectedSkill.value) return { description: '', layer: '', snippet: '' }
   return {
-    description: `${selectedSkill.value.name} is included in Muhammad Usman's ${selectedSkill.value.category.toLowerCase()} toolkit.`,
+    description: skillDescriptions[selectedSkill.value.name] || `${selectedSkill.value.name} is part of the ${selectedSkill.value.category} toolkit.`,
     layer: selectedSkill.value.category,
     snippet: `// ${selectedSkill.value.name}\nconst technology = "${selectedSkill.value.name}";`
   }
@@ -168,6 +217,15 @@ onBeforeUnmount(() => {
           </button>
         </div>
 
+        <div class="-mt-3 flex items-start justify-between gap-4 px-1 gsap-console-enter">
+          <p class="max-w-2xl text-xs sm:text-sm leading-relaxed text-on-surface-variant/80">
+            {{ categoryDescriptions[activeCategory] }}
+          </p>
+          <span class="shrink-0 pt-0.5 font-mono text-[9px] uppercase tracking-widest text-on-surface/45">
+            {{ filteredSkills.length }} skills
+          </span>
+        </div>
+
         <!-- CARDS DECK -->
         <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 gsap-console-enter">
           <div 
@@ -195,47 +253,39 @@ onBeforeUnmount(() => {
               :style="{ backgroundColor: skill.color }"
             ></div>
 
-            <div class="flex flex-col gap-2.5 mb-4 w-full">
-              <div class="flex items-center justify-between w-full">
-                <div class="flex items-center gap-3 min-w-0">
-                  <!-- Icon Frame -->
-                  <div class="w-10 h-10 flex items-center justify-center p-2 rounded shadow-inner bg-surface border border-primary/10 transition-transform duration-500 group-hover:scale-105 shrink-0"
-                    :style="{ color: skill.color, borderRadius: 'calc(var(--app-radius) / 4)' }"
-                    :class="themeStore.currentStyle === 'brutal' ? 'border-2 border-on-surface' : ''"
-                  >
-                    <i v-if="skill.faIcon" :class="skill.faIcon" class="text-xl" :style="{ color: skill.color }"></i>
-                    <div v-else-if="skill.iconUrl && skill.iconUrl.includes('simple-icons')"
-                      class="w-full h-full"
-                      :style="{
-                        backgroundColor: skill.color,
-                        mask: `url(${skill.iconUrl}) no-repeat center / contain`,
-                        webkitMask: `url(${skill.iconUrl}) no-repeat center / contain`
-                      }"
-                    ></div>
-                    <img v-else :src="skill.iconUrl || `https://skillicons.dev/icons?i=${skill.slug}`" 
-                      :alt="skill.name" 
-                      width="40"
-                      height="40"
-                      class="w-full h-full object-contain grayscale" />
-                  </div>
-
-                  <!-- Skill Name next to Icon (Desktop) -->
-                  <h4 class="hidden lg:block text-sm md:text-base font-headline font-black uppercase tracking-tight text-on-surface truncate">
-                    {{ skill.name }}
-                  </h4>
-                </div>
-
-                <!-- Skill Category -->
-                <span 
-                  class="text-[8px] font-black uppercase tracking-widest px-2 py-0.5 rounded bg-surface border border-primary/5 text-on-surface/60 shrink-0"
+            <div class="flex flex-col gap-3 mb-4 w-full min-w-0">
+              <div class="flex items-start justify-between gap-2 w-full min-w-0">
+                <!-- Icon Frame -->
+                <div class="w-10 h-10 flex items-center justify-center p-2 rounded shadow-inner bg-surface border border-primary/10 transition-transform duration-500 group-hover:scale-105 shrink-0"
+                  :style="{ color: skill.color, borderRadius: 'calc(var(--app-radius) / 4)' }"
                   :class="themeStore.currentStyle === 'brutal' ? 'border-2 border-on-surface' : ''"
                 >
-                  {{ skill.category }}
+                  <i v-if="skill.faIcon" :class="skill.faIcon" class="text-xl" :style="{ color: skill.color }"></i>
+                  <div v-else-if="skill.iconUrl && skill.iconUrl.includes('simple-icons')"
+                    class="w-full h-full"
+                    :style="{
+                      backgroundColor: skill.color,
+                      mask: `url(${skill.iconUrl}) no-repeat center / contain`,
+                      webkitMask: `url(${skill.iconUrl}) no-repeat center / contain`
+                    }"
+                  ></div>
+                  <img v-else :src="skill.iconUrl || `https://skillicons.dev/icons?i=${skill.slug}`"
+                    :alt="skill.name"
+                    width="40"
+                    height="40"
+                    class="w-full h-full object-contain grayscale" />
+                </div>
+
+                <!-- Compact category label leaves room for the full skill name below. -->
+                <span 
+                  class="max-w-[58%] min-w-0 text-right text-[7px] sm:text-[8px] font-black uppercase tracking-[0.08em] leading-tight px-1.5 py-1 rounded bg-surface border border-primary/5 text-on-surface/60 whitespace-normal break-words"
+                  :class="themeStore.currentStyle === 'brutal' ? 'border-2 border-on-surface' : ''"
+                >
+                  {{ categoryLabels[skill.category] || skill.category }}
                 </span>
               </div>
 
-              <!-- Skill Name in its own row (Mobile/Tablet) -->
-              <h4 class="lg:hidden text-xs sm:text-sm font-headline font-black uppercase tracking-tight text-on-surface truncate">
+              <h4 class="w-full min-w-0 font-headline font-black uppercase tracking-tight text-sm sm:text-base text-on-surface leading-tight whitespace-normal break-words [overflow-wrap:anywhere]">
                 {{ skill.name }}
               </h4>
             </div>
