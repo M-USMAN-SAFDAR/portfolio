@@ -8,11 +8,10 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-.env
-.env.local
 dist
 dist-ssr
 *.local
+DEANCHOR.md
 
 # Editor directories and files
 .vscode/*
@@ -25,4 +24,9 @@ dist-ssr
 *.sln
 *.sw?
 
-.vercel
+# Environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

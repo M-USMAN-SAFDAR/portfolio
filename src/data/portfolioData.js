@@ -1,34 +1,33 @@
 export const FRONTEND_SKILLS = [
-  { name: 'JavaScript', color: '#F7DF1E', letter: 'JS', icon: 'SiJavascript' },
-  { name: 'React', color: '#61DAFB', letter: 'R', icon: 'SiReact' },
-  { name: 'Flutter', color: '#47C5FB', letter: 'F', icon: 'SiFlutter' },
-  { name: 'Tailwind CSS', color: '#38BDF8', letter: 'TW', icon: 'SiTailwindcss' },
-  { name: 'HTML5', color: '#E34F26', letter: 'H5', icon: 'SiHtml5' },
-  { name: 'CSS3', color: '#1572B6', letter: 'C3', icon: 'SiCss' },
-  { name: 'Vite', color: '#646CFF', letter: 'V', icon: 'SiVite' },
-];
+  { name: 'JavaScript', category: 'Frontend', color: '#FFFFFF', slug: 'js' },
+  { name: 'React', category: 'Frontend', color: '#FFFFFF', slug: 'react' },
+  { name: 'Flutter', category: 'Frontend', color: '#FFFFFF', slug: 'flutter' },
+  { name: 'Tailwind CSS', category: 'Frontend', color: '#FFFFFF', slug: 'tailwind' },
+  { name: 'HTML5', category: 'Frontend', color: '#FFFFFF', slug: 'html' },
+  { name: 'CSS3', category: 'Frontend', color: '#FFFFFF', slug: 'css' },
+  { name: 'Vite', category: 'Frontend', color: '#FFFFFF', slug: 'vite' },
+]
 
 export const BACKEND_SKILLS = [
-  { name: 'Node.js', color: '#339933', letter: 'N', icon: 'SiNodedotjs' },
-  { name: 'Express', color: 'var(--foreground)', letter: 'E', icon: 'SiExpress' },
-  { name: 'MongoDB', color: '#47A248', letter: 'M', icon: 'SiMongodb' },
-  { name: 'PostgreSQL', color: '#4169E1', letter: 'PS', icon: 'SiPostgresql' },
-  { name: 'FastAPI', color: '#009688', letter: 'FA', icon: 'SiFastapi' },
-  { name: 'Python', color: '#3776AB', letter: 'Py', icon: 'SiPython' },
-  { name: 'Firebase', color: '#FFCA28', letter: 'FB', icon: 'SiFirebase' },
-  { name: 'SQL', color: '#3399ff', letter: 'SQL', icon: 'DiMsqlServer' },
-  { name: 'REST APIs', color: '#F97316', letter: 'API', icon: 'SiPostman' },
-  { name: 'Mongoose', color: '#880000', letter: 'MG', icon: 'SiMongodb' },
-];
+  { name: 'Node.js', category: 'Backend & Database', color: '#FFFFFF', slug: 'nodejs' },
+  { name: 'Express', category: 'Backend & Database', color: '#FFFFFF', slug: 'express' },
+  { name: 'MongoDB', category: 'Backend & Database', color: '#FFFFFF', slug: 'mongodb' },
+  { name: 'PostgreSQL', category: 'Backend & Database', color: '#FFFFFF', slug: 'postgres' },
+  { name: 'FastAPI', category: 'Backend & Database', color: '#FFFFFF', slug: 'fastapi' },
+  { name: 'Python', category: 'Backend & Database', color: '#FFFFFF', slug: 'py' },
+  { name: 'Firebase', category: 'Backend & Database', color: '#FFFFFF', slug: 'firebase' },
+  { name: 'SQL', category: 'Backend & Database', color: '#FFFFFF', slug: 'mysql' },
+  { name: 'REST APIs', category: 'Backend & Database', color: '#FFFFFF', slug: 'postman' },
+  { name: 'Mongoose', category: 'Backend & Database', color: '#FFFFFF', slug: 'mongodb' },
+]
 
 export const TOOLING_SKILLS = [
-  { name: 'Git', color: '#F05032', letter: 'G', icon: 'SiGit' },
-  { name: 'GitHub', color: 'var(--foreground)', letter: 'GH', icon: 'SiGithub' },
-  { name: 'Android Studio', color: '#3DDC84', letter: 'AS', icon: 'SiAndroidstudio' },
-  { name: 'Postman', color: '#FF6C37', letter: 'P', icon: 'SiPostman' },
-  { name: 'Figma', color: '#F24E1E', letter: 'F', icon: 'SiFigma' },
-];
-
+  { name: 'Git', category: 'Tools', color: '#FFFFFF', slug: 'git' },
+  { name: 'GitHub', category: 'Tools', color: '#FFFFFF', slug: 'github' },
+  { name: 'Android Studio', category: 'Tools', color: '#FFFFFF', slug: 'androidstudio' },
+  { name: 'Postman', category: 'Tools', color: '#FFFFFF', slug: 'postman' },
+  { name: 'Figma', category: 'Tools', color: '#FFFFFF', slug: 'figma' },
+]
 
 export const portfolioData = {
   profile: {
@@ -49,60 +48,90 @@ export const portfolioData = {
     },
     formspreeEndpoint: 'https://formspree.io/f/xgoqzgza',
   },
+  education: [],
   projects: [
     {
       id: 'hrm',
       title: 'HR Management App',
-      description:
-        'A full-stack HR management platform designed to simplify employee management and organizational workflows, featuring interactive dashboards and structured database handling.',
+      description: 'A full-stack HR management platform designed to simplify employee management and organizational workflows, featuring interactive dashboards and structured database handling.',
       modules: ['mongodb', 'express', 'react', 'nodejs'],
-      image: '/projects/hrm.png',
+      tech: ['MongoDB', 'Express', 'React', 'Node.js'],
+      blueprint: {
+        ai: 'HR management platform with interactive dashboards.',
+        scalability: 'Structured database handling with MongoDB.',
+        ux: 'Employee management and organizational workflows.',
+      },
+      image: '/projects/hrm.webp',
       link: 'https://hr-managementt.vercel.app/',
       featured: true,
     },
     {
       id: 'salon',
       title: 'Luxe Grooming',
-      description:
-        'A salon booking and management solution using React JS, Tailwind CSS, Express JS, and MongoDB, featuring appointment booking and a secure admin dashboard.',
+      description: 'A salon booking and management solution using React JS, Tailwind CSS, Express JS, and MongoDB, featuring appointment booking and a secure admin dashboard.',
       modules: ['mongodb', 'express', 'react', 'nodejs'],
-      image: '/projects/salon.png',
+      tech: ['MongoDB', 'Express', 'React', 'Node.js', 'Tailwind CSS'],
+      blueprint: {
+        ai: 'Salon booking and management solution.',
+        scalability: 'MongoDB-backed application using Express and Node.js.',
+        ux: 'Appointment booking with a secure admin dashboard.',
+      },
+      image: '/projects/salon.webp',
       link: 'https://luxehairsaloon.vercel.app/',
       featured: true,
     },
+    {
+      id: 'dispatch-by-rio',
+      title: 'Dispatch by RIO',
+      description: 'A modern dispatch website supporting owner-operators and growing fleets, with a clear overview of services, equipment, and how to get started.',
+      modules: ['react', 'gsap', 'threejs'],
+      tech: ['React', 'GSAP', 'Three.js'],
+      blueprint: {
+        ai: 'A polished website for a trucking dispatch service.',
+        scalability: 'Organized service, equipment, and company information.',
+        ux: 'Clear navigation and calls to action for owner-operators and fleets.',
+      },
+      image: '/projects/dispatch.webp',
+      link: 'https://dispatchbyrio.com/',
+      featured: true,
+    },
   ],
+  skills: [...FRONTEND_SKILLS, ...BACKEND_SKILLS, ...TOOLING_SKILLS],
+  skillCategories: [
+    { title: 'Frontend', skills: FRONTEND_SKILLS },
+    { title: 'Backend & Database', skills: BACKEND_SKILLS },
+    { title: 'Tools', skills: TOOLING_SKILLS },
+  ],
+  experience: [],
   roles: [
     {
       id: 'fullstack',
       title: 'FULL STACK ENGINEERING',
-      description:
-        'Architecting robust MERN applications — React on the front, Express + Node on the back, MongoDB at the core.',
+      description: 'Building full-stack applications with React, Node.js, Express, and MongoDB.',
     },
     {
       id: 'frontend',
       title: 'FRONTEND & MOBILE',
-      description:
-        'Building responsive React web apps and cross-platform mobile applications with Flutter & Dart.',
+      description: 'Creating responsive web experiences with React and cross-platform mobile apps with Flutter.',
     },
     {
       id: 'backend',
       title: 'APIS & DATA',
-      description:
-        'Designing secure REST APIs with Express and Node.js, with MongoDB schemas tuned for performance.',
+      description: 'Developing backend services and REST APIs with Node.js, Express, Python, and modern databases.',
     },
   ],
-  skillCategories: [
-    {
-      title: 'Frontend',
-      skills: FRONTEND_SKILLS,
-    },
-    {
-      title: 'Backend & Database',
-      skills: BACKEND_SKILLS,
-    },
-    {
-      title: 'Tools',
-      skills: TOOLING_SKILLS,
-    },
+  services: [
+    { title: 'Full Stack Engineering', desc: 'Building full-stack applications with React, Node.js, Express, and MongoDB.', icon: 'Code' },
+    { title: 'Frontend & Mobile', desc: 'Creating responsive web experiences with React and cross-platform mobile apps with Flutter.', icon: 'Smartphone' },
+    { title: 'APIs & Data', desc: 'Developing backend services and REST APIs with Node.js, Express, Python, and modern databases.', icon: 'Database' },
   ],
-};
+  offeredServices: [],
+  testimonials: [],
+  faqs: [],
+  adventureNarratives: {
+    ai: 'Building practical full-stack products with modern web and mobile technologies.',
+    web: 'Creating responsive React interfaces and reliable backend services for real-world applications.',
+    mobile: 'Developing cross-platform mobile applications with Flutter.',
+    default: 'Full Stack Developer building web and mobile applications with React, Node.js, and Flutter.',
+  },
+}
